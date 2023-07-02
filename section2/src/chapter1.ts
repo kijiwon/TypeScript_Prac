@@ -1,5 +1,4 @@
 // number
-// number
 let num1: number = 123;
 let num2: number = -123;
 let num3: number = 0.123;
@@ -10,4 +9,14 @@ let num7: number = NaN;
 
 num1 = 'hello'; 
 num1.toUpperCase();
-num1.toExponential(); 
+num1.toFixed(); // number타입의 메소드는 사용 가능
+
+// string
+let str1: string = "hello";
+let str2: string = 'hello';
+let str3: string = `hello`;
+let str4: string = `hello ${str1}`;
+
+str1 = 123;
+str1.toFixed();
+str1.toUpperCase();
