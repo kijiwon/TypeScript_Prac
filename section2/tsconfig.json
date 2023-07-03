@@ -5,7 +5,6 @@
       "outDir": "dist",
       "strict": true,
       "moduleResolution": "NodeNext",
-      "strictNullChecks": false
     },
     "ts-node": {
 		"esm": true

@@ -31,4 +31,10 @@ let null1: null = null;
 // undefined
 let unde1: undefined = undefined;
 
-let numA:number = null;
+
+// 리터럴 타입
+let numA:10 = 10; 
+numA = 12;
+
+let strA:"hello" = "hello";
+strA = "welcome";
