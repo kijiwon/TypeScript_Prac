@@ -35,6 +35,6 @@ let unde1: undefined = undefined;
 // 리터럴 타입
 let numA:10 = 10; 
 numA = 12;
-
+let numB:123 = 1;
 let strA:"hello" = "hello";
 strA = "welcome";
