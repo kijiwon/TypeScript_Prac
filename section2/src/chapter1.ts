@@ -7,8 +7,8 @@ let num5: number = Infinity;
 let num6: number = -Infinity;
 let num7: number = NaN;
 
-num1 = 'hello'; 
-num1.toUpperCase();
+// num1 = 'hello'; 
+// num1.toUpperCase();
 num1.toFixed(); // number타입의 메소드는 사용 가능
 
 // string
@@ -17,8 +17,8 @@ let str2: string = 'hello';
 let str3: string = `hello`;
 let str4: string = `hello ${str1}`;
 
-str1 = 123;
-str1.toFixed();
+// str1 = 123;
+// str1.toFixed();
 str1.toUpperCase();
 
 // boolean
@@ -33,8 +33,8 @@ let unde1: undefined = undefined;
 
 
 // 리터럴 타입
-let numA:10 = 10; 
-numA = 12;
-let numB:123 = 1;
-let strA:"hello" = "hello";
-strA = "welcome";
+// let numA:10 = 10; 
+// numA = 12;
+// let numB:123 = 1;
+// let strA:"hello" = "hello";
+// strA = "welcome";

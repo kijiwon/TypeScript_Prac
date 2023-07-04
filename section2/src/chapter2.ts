@@ -16,3 +16,22 @@ let doubleStr:string[][]= [
     ['hello', 'welcome'],
     ['im', 'princess']
 ]
+
+// 튜플
+let tup1:[number, number] = [1,2];
+let tup2: [number, string, boolean] = [1, "hello", true];
+
+// tup1 = [1,2,3];
+// tup1 = ['1','2'];
+// tup2 = [1,2,3];
+// tup2 = ['1','hello', true]
+tup1.push(2);
+console.log(tup1);
+
+const users:[string, number][]= [
+    ["김기지", 1],
+    ["이아무개", 2],
+    ["김아무개", 3],
+    ["박아무개", 4],
+    [5, "최아무개"]
+  ];
