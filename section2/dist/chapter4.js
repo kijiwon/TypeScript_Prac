@@ -17,4 +17,12 @@ let user2 = {
     bio: "hello",
     location: "수원"
 };
+let countryCodes = {
+    Korea: "ko",
+    UnitedState: "us",
+    UnitedKingdom: "uk",
+    // (... 약 100개의 국가)
+    Brazil: 'bz'
+};
+let empty = {};
 export {};
