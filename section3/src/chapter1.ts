@@ -6,4 +6,4 @@ let num2:10 = 10;
 num1=num2;
 
 // 다운 캐스팅
-num2=num1;
+// num2=num1;
