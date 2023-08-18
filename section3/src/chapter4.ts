@@ -48,3 +48,16 @@ let union3:Union1 = {
 //     name:"",
 // };
 // name 프로퍼티만 들어있는 union4는 Dog타입에도 Person 타입에도 속하지 않음
+
+
+// 교집합 타입 - Intersection 타입
+// & 연산자를 이용해 정의
+let variable: number & string;
+// number 타입과 string 타입의 교집합은 존재하지 않음 -> never 타입으로 정의됨 (공집합)
+type Intersection = Dog & Person;
+// Dog 타입과 Person 타입에 모두 속해야하므로 모든 프로퍼티를 가져야함
+let intersection1: Intersection = {
+    name: "",
+    color: "",
+    language: "",
+}
