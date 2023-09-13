@@ -18,5 +18,7 @@ let bool = func(true);
 let str = func('string');
 
 // 타입 변수에 할당되는 타입을 프로그래머가 명시할 수도 있음
+// 명시 ❌
+let arr1 = func([1, 2, 3]);
 // 튜플 타입으로 정의하기
-let arr = func<[number, number, number]>([1, 2, 3]);
+let arr2 = func<[number, number, number]>([1, 2, 3]);
