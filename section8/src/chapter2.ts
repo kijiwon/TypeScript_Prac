@@ -10,7 +10,7 @@ interface Person {
 // 주의!
 // keyof 연산자는 타입에만 사용할 수 있음
 // -> keyof person ❌
-function getPropertyKey(person, key: keyof Person){
+function getPropertyKey(person: Person, key: keyof Person){
     return person[key];
 }
 
@@ -28,7 +28,7 @@ type Person2 = typeof person2;
 
 // Person2에는 person2에서 뽑아온 객체 타입이 들어가 있음
 // => Person2 대신 typeof person2로 사용 가능
-function getPropertyKey2(person, key: keyof typeof person2){ // key에는 'name' | 'age' 유니온 타입이 들어감
+function getPropertyKey2(person: Person2, key: keyof typeof person2){ // key에는 'name' | 'age' 유니온 타입이 들어감
     return person[key];
 }
 
