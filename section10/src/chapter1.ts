@@ -1,5 +1,5 @@
 /**
- * Partial
+ * Partial<T>
  * -> 부분적인, 일부분의
  * => 특정 객체 타입의 모든 프로퍼티를 선택적 프로퍼티로 바꿔주는 타입
  */
@@ -47,3 +47,26 @@ const withThumbnailPost: Required<Post> = {
     // 선택적 프로퍼티인 thumbnailURL도 필수 프로퍼티가 됨
     thumbnailURL: 'https://...',
 }
+
+
+
+
+/**
+ * Readonly<T>
+ * 읽기전용, 수정불가
+ * => 특정 객체 타입에서 모든 프로퍼티를 읽기 전용 프로퍼티로 만들어주는 타입
+ */
+
+// Readonly 직접 구현
+type Readonly<T> = {
+    readonly[key in keyof T]: T[key];
+}
+
+const readonlyPost: Readonly<Post> = {
+    title: '보호된 게시글 입니다.',
+    tag: [],
+    content: '',
+};
+
+// 프로퍼티 수정 불가능
+// readonlyPost.content = '본문';  // ❌
