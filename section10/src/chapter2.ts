@@ -6,7 +6,7 @@
 
 interface Post {
     title: string;
-    tag: string[];
+    tags: string[];
     content: string;
     thumbnailURL?: string;
 }
@@ -24,3 +24,26 @@ const legacyPost: Pick<Post, 'title' | 'content'> = {
     title: '옛날 글',
     content: '옛날 컨텐츠',
 }
+
+
+
+
+/**
+ * Omit<T, K>
+ * 생략하다, 빼다
+ * => 객체 타입으로부터 특정 프로퍼티를 제거하는 타입
+ */
+
+// Omit 직접 구현
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+// T = Post, K = 'title'
+// Pick<Post, Exclude<keyof Post, 'title'>>
+// Pick<Post, Exclude<'title' | 'content' | 'tags' | 'thumbnailURL', 'title>>
+// Pick<Post, 'content' | 'tags' | 'thumbnailURL'>
+
+const noTitlePost: Omit<Post, 'title'> = {
+    // Post 타입의 title 프로퍼티만 제거
+    content: '',
+    tags: [],
+   thumbnailURL: '', 
+};
