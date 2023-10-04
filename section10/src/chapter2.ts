@@ -47,3 +47,36 @@ const noTitlePost: Omit<Post, 'title'> = {
     tags: [],
    thumbnailURL: '', 
 };
+
+
+
+
+/**
+ * Record<K, V>
+ * 새로운 객체 타입을 정의할 때 인덱스 시그니쳐처럼 유연하지만 조금 더 제한적인 객체 타입을 정의하는 타입
+ * 실무에서 자주 사용하는 타입
+ */
+
+type ThumnailLegacy = {
+    large: {
+        url: string;
+    };
+    medium: {
+        url: string;
+    };
+    small: {
+        url: string;
+    };
+};
+
+// Record 구현
+type Record<K extends keyof any, V> = { // K에 제약 걸기 -> K에 들어오는 타입은 객체 타입의 키를 추출한 유니온 타입
+    [key in K]: V
+}
+
+// Record타입으로 객체 타입 만들기
+// 프로퍼티를 추가하는 경우 유니온에 추가
+// 버전별로 새로운 프로퍼티를 추가하는 경우 두번째 타입 변수에 추가
+type Thumbnail = Record<'large' | 'medium' | 'small' | 'watch', {url: string; size: number}>;
+// 첫번째 타입 변수 => 객체의 프로퍼티 키
+// 두번째 타입 변수 => 키의 value 타입
