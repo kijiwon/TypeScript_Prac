@@ -48,3 +48,44 @@ type Extract<T, U> = T extends U? T : never;
 type B = Extract<string | boolean, boolean>;
 // 타입 B는 string | boolean 에서 boolean 타입을 뽑아낸 타입
 // -> boolean 타입
+
+
+
+
+/**
+ * ReturnType<T>
+ * 함수의 반환값 타입을 추출하는 타입
+ */
+
+
+// ReturnType 직접 구현하기
+type ReturnType<T extends (...arg: any)=> any> = T extends (
+    ...arg: any
+) => infer R ? R : never;
+// T에는 함수 타입만 들어올 수 있음
+// 매개변수 타입은 any로 설정
+// 반환값 타입은 추론해야함 -> infer 사용
+// R로 추론했을 때 참인경우 R, 거짓인 경우 never
+
+// 동작 방식
+// 1. ReturnType<typeof funcA>
+// -> funcA의 타입을 T에 전달 => string
+// 2. T가 R의 서브타입이 되도록 추론하기
+// => R은 string
+
+
+function funcA(){
+    return 'hello';
+};
+
+function funcB(){
+    return 10;
+};
+
+type ReturnA = ReturnType<typeof funcA>;
+// funcA의 반환값 타입은 string
+// -> 타입 ReturnA는 string 타입
+
+type ReturnB = ReturnType<typeof funcB>;
+// funcB의 반환값 타입은 number
+// -> 타입 ReturnB는 number 타입
