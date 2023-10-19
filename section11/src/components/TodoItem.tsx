@@ -1,14 +1,14 @@
+import { useTodoDispatch } from "../App";
 import { Todo } from "../types";
 
 // props의 타입 설정
 interface Props extends Todo{
-    onClickDelete: (id: number) => void;
 }
 
 export default function TodoItem(props: Props){
-
+    const dispatch = useTodoDispatch();
     const onClickButton = () => {
-        props.onClickDelete(props.id);
+        dispatch.onClickDelete(props.id);
     }
     return (
         <div>
